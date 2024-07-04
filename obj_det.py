@@ -6,7 +6,7 @@ from PIL import Image
 processor = DetrImageProcessor.from_pretrained("facebook/detr-resnet-101", revision="no_timm")
 model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-101", revision="no_timm")
 
-def obj_det(video_path: str):
+def obj_det(video_path : str):
     cap = cv2.VideoCapture(video_path)
     while cap.isOpened():
         ret, frame = cap.read()
@@ -34,3 +34,4 @@ def obj_det(video_path: str):
 
     cap.release()
     cv2.destroyAllWindows()
+
